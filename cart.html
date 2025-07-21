@@ -145,7 +145,7 @@
             });
             const total = document.getElementById('total').textContent;
 
-            fetch('https://royal-vuolet-backend.onrender.com/api/order', {
+            fetch('https://royal-vuolet.onrender.com/api/order', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ items, total })
