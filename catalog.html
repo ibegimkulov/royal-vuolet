@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог | Royal Jewels</title>
+    <link rel="stylesheet" href="css/catalog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">💎 Royal Jewels</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html">🛒</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="catalog-hero">
+        <div class="container">
+            <h1>Каталог украшений</h1>
+            <p>Эксклюзивные украшения для особых случаев</p>
+        </div>
+    </section>
+
+    <section class="filters">
+        <div class="container">
+            <div class="filter-controls">
+                <select id="category-filter">
+                    <option value="">Все категории</option>
+                    <option value="rings">Кольца</option>
+                    <option value="necklaces">Ожерелья</option>
+                    <option value="earrings">Серьги</option>
+                    <option value="bracelets">Браслеты</option>
+                </select>
+                <select id="price-filter">
+                    <option value="">Все цены</option>
+                    <option value="0-5000000">До 5 000 000 сум</option>
+                    <option value="5000000-15000000">5 000 000 - 15 000 000 сум</option>
+                    <option value="15000000+">От 15 000 000 сум</option>
+                </select>
+                <button class="btn" onclick="clearFilters()">Сбросить фильтры</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Кольца -->
+                <div class="product-card" data-category="rings" data-price="15000000">
+                    <img src="images/ring1.jpg" alt="Кольцо Royal Gold">
+                    <h3>Кольцо Royal Gold</h3>
+                    <p class="price">15 000 000 сум</p>
+                    <p class="description">Элегантное кольцо из белого золота с бриллиантом</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Кольцо Royal Gold', 15000000, 'images/ring1.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="rings" data-price="12000000">
+                    <img src="images/ring2.jpg" alt="Кольцо Diamond Star">
+                    <h3>Кольцо Diamond Star</h3>
+                    <p class="price">12 000 000 сум</p>
+                    <p class="description">Кольцо с россыпью бриллиантов</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Кольцо Diamond Star', 12000000, 'images/ring2.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- Ожерелья -->
+                <div class="product-card" data-category="necklaces" data-price="17000000">
+                    <img src="images/necklace1.jpg" alt="Ожерелье с изумрудом">
+                    <h3>Ожерелье с изумрудом</h3>
+                    <p class="price">17 000 000 сум</p>
+                    <p class="description">Роскошное ожерелье с натуральным изумрудом</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Ожерелье с изумрудом', 17000000, 'images/necklace1.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="necklaces" data-price="25000000">
+                    <img src="images/necklace2.jpg" alt="Ожерелье Royal Pearl">
+                    <h3>Ожерелье Royal Pearl</h3>
+                    <p class="price">25 000 000 сум</p>
+                    <p class="description">Эксклюзивное ожерелье с жемчугом</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Ожерелье Royal Pearl', 25000000, 'images/necklace2.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- Серьги -->
+                <div class="product-card" data-category="earrings" data-price="7000000">
+                    <img src="images/earrings1.jpg" alt="Серьги из белого золота">
+                    <h3>Серьги из белого золота</h3>
+                    <p class="price">7 000 000 сум</p>
+                    <p class="description">Элегантные серьги с бриллиантами</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Серьги из белого золота', 7000000, 'images/earrings1.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="earrings" data-price="9500000">
+                    <img src="images/earrings2.jpg" alt="Серьги Sapphire Dream">
+                    <h3>Серьги Sapphire Dream</h3>
+                    <p class="price">9 500 000 сум</p>
+                    <p class="description">Серьги с сапфирами и бриллиантами</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Серьги Sapphire Dream', 9500000, 'images/earrings2.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- Браслеты -->
+                <div class="product-card" data-category="bracelets" data-price="3500000">
+                    <img src="images/bracelet1.jpg" alt="Браслет Elite Shine">
+                    <h3>Браслет Elite Shine</h3>
+                    <p class="price">3 500 000 сум</p>
+                    <p class="description">Стильный браслет из белого золота</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Браслет Elite Shine', 3500000, 'images/bracelet1.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bracelets" data-price="5500000">
+                    <img src="images/bracelet2.jpg" alt="Браслет Diamond Line">
+                    <h3>Браслет Diamond Line</h3>
+                    <p class="price">5 500 000 сум</p>
+                    <p class="description">Браслет с бриллиантами и золотом</p>
+                    <div class="product-actions">
+                        <button class="btn small" onclick="addToCart('Браслет Diamond Line', 5500000, 'images/bracelet2.jpg')">В корзину</button>
+                        <a href="#" class="btn small secondary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Royal Jewels. Все права защищены.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Фильтрация товаров
+        document.getElementById('category-filter').addEventListener('change', filterProducts);
+        document.getElementById('price-filter').addEventListener('change', filterProducts);
+
+        function filterProducts() {
+            const categoryFilter = document.getElementById('category-filter').value;
+            const priceFilter = document.getElementById('price-filter').value;
+            const products = document.querySelectorAll('.product-card');
+
+            products.forEach(product => {
+                let show = true;
+                const category = product.dataset.category;
+                const price = parseInt(product.dataset.price);
+
+                // Фильтр по категории
+                if (categoryFilter && category !== categoryFilter) {
+                    show = false;
+                }
+
+                // Фильтр по цене
+                if (priceFilter) {
+                    const [min, max] = priceFilter.split('-').map(p => p === '+' ? Infinity : parseInt(p));
+                    if (price < min || (max !== Infinity && price > max)) {
+                        show = false;
+                    }
+                }
+
+                product.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        function clearFilters() {
+            document.getElementById('category-filter').value = '';
+            document.getElementById('price-filter').value = '';
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                product.style.display = 'block';
+            });
+        }
+
+        function addToCart(name, price, image) {
+            // Здесь можно добавить логику сохранения в localStorage
+            alert(`Товар "${name}" добавлен в корзину!`);
+        }
+    </script>
+</body>
+</html>

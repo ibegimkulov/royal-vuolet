@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Jewels — Эксклюзивные драгоценности</title>
+    <meta name="description" content="Эксклюзивные украшения из золота и драгоценных камней. Качественные изделия ручной работы.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>Royal Jewels</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Эксклюзивные драгоценности</h1>
+                <p>Создаём уникальные украшения, которые подчёркивают вашу индивидуальность и становятся частью вашей истории</p>
+                <div class="hero-buttons">
+                    <a href="catalog.html" class="btn btn-primary">Смотреть каталог</a>
+                    <a href="about.html" class="btn btn-secondary">Узнать больше</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="jewelry-showcase">
+                    <div class="jewelry-item ring">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="jewelry-item necklace">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="jewelry-item earrings">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Качество</h3>
+                    <p>Используем только лучшие материалы и драгоценные камни</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Уникальность</h3>
+                    <p>Каждое украшение создаётся в единственном экземпляре</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Доставка</h3>
+                    <p>Быстрая и безопасная доставка по всему миру</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Поддержка</h3>
+                    <p>Консультации экспертов и помощь в выборе</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="popular-products">
+        <div class="container">
+            <h2>Популярные украшения</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/ring-gold.jpg" alt="Золотое кольцо">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary" onclick="addToCart('Золотое кольцо', 15000000)">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Золотое кольцо</h3>
+                        <p class="price">15 000 000 сум</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/necklace-emerald.jpg" alt="Ожерелье с изумрудом">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary" onclick="addToCart('Ожерелье с изумрудом', 25000000)">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ожерелье с изумрудом</h3>
+                        <p class="price">25 000 000 сум</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/earrings-diamond.jpg" alt="Серьги с бриллиантами">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary" onclick="addToCart('Серьги с бриллиантами', 12000000)">
+                                <i class="fas fa-shopping-cart"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Серьги с бриллиантами</h3>
+                        <p class="price">12 000 000 сум</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="catalog.html" class="btn btn-secondary">Смотреть все товары</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О нашей мастерской</h2>
+                    <p>Royal Jewels — это семейная мастерская, где каждая деталь имеет значение. Мы создаём украшения уже более 15 лет, сочетая традиционные техники с современными технологиями.</p>
+                    <p>Наши мастера — это настоящие художники, которые вкладывают душу в каждое изделие. Мы используем только сертифицированные драгоценные камни и металлы высшей пробы.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Лет опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Уникальных изделий</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/workshop.jpg" alt="Наша мастерская">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Потрясающие украшения! Качество на высшем уровне. Мой муж был в восторге от подарка."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4>Анна Петрова</h4>
+                            <span>Постоянный клиент</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Заказывала кольцо на годовщину. Мастера учли все пожелания, результат превзошёл ожидания!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4>Мария Сидорова</h4>
+                            <span>Клиент</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Профессиональный подход и внимание к деталям. Рекомендую всем, кто ценит качество."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4>Елена Козлова</h4>
+                            <span>Постоянный клиент</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Подпишитесь на новости</h2>
+                <p>Получайте первыми информацию о новых коллекциях и специальных предложениях</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Ваш email" required>
+                    <button type="submit" class="btn btn-primary">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-gem"></i>
+                        <span>Royal Jewels</span>
+                    </div>
+                    <p>Создаём эксклюзивные украшения для особых случаев и повседневной жизни.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/webdev__alex/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/@Iskander_115" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577570515318" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@PANDA-zr4wl" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Каталог</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=rings">Кольца</a></li>
+                        <li><a href="catalog.html?category=necklaces">Ожерелья</a></li>
+                        <li><a href="catalog.html?category=earrings">Серьги</a></li>
+                        <li><a href="catalog.html?category=bracelets">Браслеты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +998 71 123 45 67</p>
+                        <p><i class="fas fa-envelope"></i> info@royaljewels.uz</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Навои, 15, Ташкент</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Royal Jewels. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

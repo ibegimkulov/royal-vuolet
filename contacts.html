@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Royal Jewels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">💎 Royal Jewels</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
+                    <li><a href="cart.html">🛒</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero contact-hero">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p>Мы всегда готовы ответить на ваши вопросы</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>Контактная информация</h2>
+                    <div class="contact-item">
+                        <h3>📍 Адрес</h3>
+                        <p>ул. Навои, 15<br>Ташкент, Узбекистан</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Телефон</h3>
+                        <p>+998 71 123 45 67</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p>info@royaljewels.uz</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Часы работы</h3>
+                        <p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 16:00<br>Вс: Выходной</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Напишите нам</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема</label>
+                            <select id="subject" name="subject">
+                                <option value="">Выберите тему</option>
+                                <option value="order">Заказ украшений</option>
+                                <option value="consultation">Консультация</option>
+                                <option value="custom">Индивидуальный заказ</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Как нас найти</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912.5!2d69.2794!3d41.3111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE4JzQwLjAiTiA2OcKwMTYnNDYuMCJF!5e0!3m2!1sru!2suz!4v1234567890"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Royal Jewels. Все права защищены.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

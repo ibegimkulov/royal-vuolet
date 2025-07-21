@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина | Royal Jewels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">💎 Royal Jewels</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="cart.html" class="active">🛒</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cart-section">
+        <div class="container">
+            <h1>Корзина</h1>
+            
+            <div class="cart-container">
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="images/ring1.jpg" alt="Кольцо Royal Gold">
+                        <div class="item-details">
+                            <h3>Кольцо Royal Gold</h3>
+                            <p class="item-price">15 000 000 сум</p>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="changeQuantity(1, -1)">-</button>
+                                <span class="quantity" id="quantity-1">1</span>
+                                <button class="quantity-btn" onclick="changeQuantity(1, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(1)">✕</button>
+                    </div>
+                    
+                    <div class="cart-item">
+                        <img src="images/necklace1.jpg" alt="Ожерелье с изумрудом">
+                        <div class="item-details">
+                            <h3>Ожерелье с изумрудом</h3>
+                            <p class="item-price">17 000 000 сум</p>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="changeQuantity(2, -1)">-</button>
+                                <span class="quantity" id="quantity-2">1</span>
+                                <button class="quantity-btn" onclick="changeQuantity(2, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(2)">✕</button>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Итого</h3>
+                    <div class="summary-item">
+                        <span>Товары (2):</span>
+                        <span id="subtotal">32 000 000 сум</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Доставка:</span>
+                        <span>Бесплатно</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>К оплате:</span>
+                        <span id="total">32 000 000 сум</span>
+                    </div>
+                    <button class="btn checkout-btn" onclick="checkout()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="empty-cart" id="empty-cart" style="display: none;">
+                <h2>Корзина пуста</h2>
+                <p>Добавьте товары из каталога</p>
+                <a href="catalog.html" class="btn">Перейти в каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Royal Jewels. Все права защищены.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeQuantity(itemId, change) {
+            const quantityElement = document.getElementById(`quantity-${itemId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+            currentQuantity = Math.max(1, currentQuantity + change);
+            quantityElement.textContent = currentQuantity;
+            updateTotal();
+        }
+
+        function removeItem(itemId) {
+            const cartItem = document.querySelector(`[onclick="removeItem(${itemId})"]`).parentElement;
+            cartItem.remove();
+            updateTotal();
+            
+            // Проверяем, пуста ли корзина
+            const cartItems = document.querySelectorAll('.cart-item');
+            if (cartItems.length === 0) {
+                document.querySelector('.cart-container').style.display = 'none';
+                document.getElementById('empty-cart').style.display = 'block';
+            }
+        }
+
+        function updateTotal() {
+            const quantities = document.querySelectorAll('.quantity');
+            const prices = [15000000, 17000000]; // Цены товаров
+            let total = 0;
+            
+            quantities.forEach((quantity, index) => {
+                if (index < prices.length) {
+                    total += parseInt(quantity.textContent) * prices[index];
+                }
+            });
+            
+            document.getElementById('subtotal').textContent = `${total.toLocaleString()} сум`;
+            document.getElementById('total').textContent = `${total.toLocaleString()} сум`;
+        }
+
+        function checkout() {
+            // Собираем данные заказа
+            const items = [];
+            document.querySelectorAll('.cart-item').forEach(item => {
+                items.push({
+                    name: item.querySelector('h3').textContent,
+                    price: item.querySelector('.item-price').textContent,
+                    quantity: item.querySelector('.quantity').textContent
+                });
+            });
+            const total = document.getElementById('total').textContent;
+
+            fetch('http://localhost:3001/api/order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items, total })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Спасибо за заказ! Мы свяжемся с вами в Telegram.');
+                } else {
+                    alert('Ошибка отправки заказа.');
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
